@@ -2,8 +2,8 @@
 This repo stores names of github users which are allowed to login into csi servers
 
 The repo follows a simple directory structure. Each folder on the root level represents a server (for example csivit)
-Inside a server's folder, each file of filename <name> stores the usernames of github users allowed to access the 
-user with username <name> on the server.
+Inside a server's folder, each file of filename `name` stores the usernames of github users allowed to access the 
+user with username `name` on the server. (eg, `csivit/root` stores github usernames of people allowed to login as root on the csivit server)
 
 # Why?
 OpenSSH keys are normally listed in the `~/.ssh/authorized_keys` file, but this is terrible to manage, as you have to deal
