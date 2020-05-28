@@ -35,6 +35,6 @@ AuthorizedKeysCommand /usr/local/bin/get_keys  https://raw.githubusercontent.com
 AuthorizedKeysCommandUser nobody
 ```
 
-Now if you want to give access, to say github user `thebongy` to  root on the server, just make a file at `server_name/root`, and add
+Now if you want to give access, to say github user `thebongy` to  root on the server, just make a file at `server_name/root` on this repo, and add
 `thebongy` inside the file. That's it!
 
