@@ -29,12 +29,16 @@ wget -O get_keys https://raw.githubusercontent.com/csivitu/authorized_users/mast
 chmod +x get_keys
 ```
 
-Add the following lines in /etc/ssh/sshd_config , where `server_name` is same as the folder name for that server on this repo.
+Add the following lines in /etc/ssh/sshd_config , where `server_name` is same as the folder name for that server on this repo and `user_name` is name of usertype (ex: root).
 ```
-AuthorizedKeysCommand /usr/local/bin/get_keys  https://raw.githubusercontent.com/csivitu/authorized_users/master <server_name> %u
+AuthorizedKeysCommand /usr/local/bin/get_keys https://raw.githubusercontent.com/csivitu/authorized_users/master <server_name> <user_name>
 AuthorizedKeysCommandUser nobody
 ```
 
-Now if you want to give access, to say github user `thebongy` to  root on the server, just make a file at `server_name/root` on this repo, and add
-`thebongy` inside the file. That's it!
+Restart SSH service on the server
+```
+sudo systemctl restart ssh
+```
 
+Now if you want to give access, to say github user `thebongy` to root on the server, just make a file at `server_name/root` on this repo, and add
+`thebongy` inside the file. That's it!
